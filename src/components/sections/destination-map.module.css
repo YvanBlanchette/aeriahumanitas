@@ -1,0 +1,48 @@
+.surface {
+  background-color: #f7f6f2;
+  background-image: radial-gradient(#d8d3c8 0.6px, transparent 0.6px);
+  background-size: 16px 16px;
+}
+
+.canvas :global(.cls-2) {
+  fill: #dedbd2;
+  pointer-events: none;
+}
+.canvas :global(.cls-1) {
+  fill: #f7f6f2;
+  pointer-events: none;
+}
+
+.canvas [data-destination] {
+  fill: #b58b4e;
+  stroke: #8d6937;
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+  cursor: pointer;
+  transition:
+    fill 180ms ease,
+    filter 180ms ease,
+    stroke-width 180ms ease;
+}
+
+.canvas [data-destination][data-highlighted],
+.canvas [data-destination]:focus-visible {
+  fill: #dab777;
+  stroke: #6f512b;
+  stroke-width: 1.3;
+  filter: drop-shadow(0 0 4px rgb(181 139 78 / 45%));
+}
+
+.canvas [data-destination][aria-pressed='true'] {
+  fill: #866137;
+  stroke: #51391d;
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 4px rgb(181 139 78 / 35%));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas [data-destination] {
+    transition: none;
+  }
+}
